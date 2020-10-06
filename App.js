@@ -1,19 +1,23 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { Fragment } from 'react';
+import { View, StyleSheet } from 'react-native'
+import Constants from 'expo-constants'
+
+
+
+import Pomodoro from './src/index'
+
+function StatusBar() {
+  return (
+    <View style={{ height: Constants.statusBarHeight}}/>
+  )
+}
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-    </View>
-  );
+  <Fragment>
+    <StatusBar />
+    <Pomodoro />
+  </Fragment>
+  
+  )
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
